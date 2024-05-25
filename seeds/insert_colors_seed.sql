@@ -1,1 +1,1 @@
-INSERT INTO colors(name) VALUES ('Blue'), ('Red'), ('Yellow'), ('Green')
+INSERT INTO colors(name, hex) VALUES ('Blue', '#0D6EFD'), ('Red', '#EC2114'), ('Yellow', '#F6E809'), ('Green', '#86F131')

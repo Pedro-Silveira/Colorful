@@ -21,7 +21,7 @@
             
             if ($Usuario) {
                 $Usuario->enviarBanco();
-                header("location: index.php");
+                
             } else {
                 header("location: cadastrar_usuario.php?m=3");
             }

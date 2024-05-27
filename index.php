@@ -80,7 +80,7 @@ $users = $connection->query("SELECT * FROM users");
                             <a class="link-offset-2 link-underline link-underline-opacity-0 link-secondary" href="editar_usuario.php?id=<?= $user->id ?>">
                                 <img src="/images/editar.png" alt="Editar" width="25" height="25">
                             </a>
-                            <a class="link-offset-2 link-underline link-underline-opacity-0 link-secondary" href="apagar_usuario.php?id=<?= $user->id ?>">
+                            <a class="link-offset-2 link-underline link-underline-opacity-0 link-secondary" href="delete_usuario.php?id=<?= $user->id ?>">
                                 <img src="/images/apagar-simbolo.png" alt="Apagar" width="25" height="25">
                             </a>
                         </div>

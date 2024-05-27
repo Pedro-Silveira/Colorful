@@ -1,5 +1,6 @@
 <?php
     class Usuario{
+        private $id;
         private $nome;
         private $email;
         private $connection;
@@ -36,17 +37,24 @@
 
                     $this->id = $this->connection->getConnection()->lastInsertId();
 
-                    echo $this->id;
+                    break;
             }
         }
     
-        public static function trazerBanco() {
-            $query = $this->connection->query("SELECT * FROM users WHERE id = '$this->id'");
+        public static function buscarBanco($connection, $id) {
+            $query = $connection->query("SELECT * FROM users WHERE id = '$id'")->fetch();
+            var_dump($query);
     
             if ($query) {
                 return new self($query->id, $query->name, $query->email);
             }
     
+            return null;
+        }
+
+        public function deletarBanco($connection) {
+            $query = $connection->query("DELETE * FROM users WHERE id = '$this->id'");
+
             return null;
         }
     }

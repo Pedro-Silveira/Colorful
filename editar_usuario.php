@@ -7,30 +7,29 @@
     $nomeRegex = "/^[A-Za-zÀ-ú]+(?:\s[A-Za-zÀ-ú]+)*$/";
     $emailRegex = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 
-    if (isset($_POST["nome"]) && isset($_POST["email"])) {
+    if (isset($_POST["id"]) && isset($_POST["nome"]) && isset($_POST["email"])) {
+        $id = $_POST["id"];
+        var_dump($id);
         $nome = $_POST["nome"];
         $email = $_POST["email"];
 
         if (!preg_match($nomeRegex, $nome)) {
-            header("location: cadastrar_usuario.php?m=1");
+            header("location: index.php?m=1");
             exit();
         } else if (!preg_match($emailRegex, $email)) {
-            header("location: cadastrar_usuario.php?m=2");
+            header("location: index.php?m=2");
             exit();
         } else {
-            $usuario = new Usuario(null, $nome, $email);
+            $usuario = $usuarioBanco->retornarUsuario($id);
+            var_dump($usuario);
 
             if ($usuario) {
                 $usuarioBanco->salvarUsuario($usuario);
-                header("location: index.php");
-                exit();
-            } else {
-                header("location: cadastrar_usuario.php?m=3");
-                exit();
-            };
+                var_dump($usuario);
+            }
         };
     } else {
-        header("location: cadastrar_usuario.php?m=3");
+        header("location: index.php?m=3");
         exit();
     };
 ?>

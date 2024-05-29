@@ -1,28 +1,23 @@
 # Colorful: CRUD de Usuários e Cores
 ![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.0-%2397C900?style=for-the-badge)
 ![Linguagem](https://img.shields.io/badge/Linguagem-PHP-%231F6FEB?style=for-the-badge)
+![Front-end](https://img.shields.io/badge/Front%20End-Bootstrap-%231F6FEB?style=for-the-badge)
 ![Banco de Dados](https://img.shields.io/badge/Banco%20de%20Dados-SQLite-%231F6FEB?style=for-the-badge)
 
-![Captura de tela.](https://drive.google.com/uc?export=view&id=157rHM-EQwLcLZu5sGBsSq6sfJDRh3ZH3)
-<img src="https://drive.google.com/uc?export=view&id=1ib-k4t7i3frAHR_OaYfizcnU_Q0XhV4c" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1HwghGqEge6nW9BqJeu7FH3xjPN5SA4GE" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1rZDNfoWzKAB1I8ZKsJGqgePOGSZ2GWPP" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1B2YDRbsm_lWr__VzkjxMUwQBc-P_ZQtp" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1mOFFBTCYNhzx1PQ0unXhDszJUdO3NFQw" width="20%"></img>
-> Sistema de gerenciamento de eventos desenvolvido para a Pastoral Universitária da Universidade La Salle, com o objetivo de substituir as planilhas de controle de eventos por um método mais eficiente e prático.
+![Captura de tela](https://drive.google.com/uc?export=view&id=1q46ras1L78XqwaudU-7uv1tKejKXHPl4)
+<img src="https://drive.google.com/uc?export=view&id=1dzjUvwmnNPPLDfbzlrxP_zXJtVFInWW0" width="25%"></img><img src="https://drive.google.com/uc?export=view&id=1cdUTiBKFRbF2N8rP4aHOSLQty0fUvY2Y" width="25%"></img><img src="https://drive.google.com/uc?export=view&id=1BRkvHANtz3LaNl6UdD_FdvIzCfZEWRNT" width="25%"></img><img src="https://drive.google.com/uc?export=view&id=1oD6GEL5znu1zxUH3hh3nvcDc6wc4cF9e" width="25%"></img>
+> Sistema CRUD desenvolvido como um teste para a empresa VersoTech, sediada em Porto Alegre - RS, com o objetivo de gerenciar usuários e atribuir cores a eles.
 
-## 📝 Documentação
+## 💻 Especificações Técnicas
 
-Consulte a documentação oficial do sistema abaixo:
+O sistema tem como objetivo criar, editar e excluir usuários, além de associar cores aos usuários. Para isso, foram desenvolvidas as classes `Usuario`, `UsuarioBanco`, `Cor` e `CorBanco`.
 
-* [Documentação do Software](https://drive.google.com/file/d/1z-JO-Fd32rxnKwQZLBNeQSMlXlDjFLHk/view?usp=sharing)
-* [Mockup](https://drive.google.com/file/d/1XB2Cb4lA1HgFn3ETssh5pRcymbHpRgpC/view?usp=sharing)
+As classes `Usuario` e `Cor` são responsáveis pela criação individual dos objetos, e as operações de manipulação dos dados são realizadas através dos métodos definidos dentro dessas classes. Por outro lado, as classes `UsuarioBanco` e `CorBanco` fazem a ligação direta com o banco de dados, gerenciando o armazenamento e a recuperação dos dados, também por meio dos seus próprios métodos.
 
-## 💻 Dependências
+O sistema possui três páginas principais para o gerenciamento e cadastro de usuários. Essas páginas são complementadas por funções em JavaScript e PHP que garantem a funcionalidade esperada. Ainda, vale destacar os seguintes aspectos:
 
-São dependências para o funcionamento do sofware:
+**Boas práticas:** O sistema foi desenvolvido seguindo os princípios da Programação Orientada a Objetos (POO), o que assegura uma melhor organização, legibilidade e manutenibilidade do software. Todas as funções e métodos estão devidamente comentados, o que facilita o desenvolvimento em equipe. Além disso, o código foi revisado para otimizar processos e minimizar a repetição.
 
-* Expo: `~50.0.14`;
-* Firebase: `^10.11.0`;
-* Native Base: `^3.4.28`;
-* React: `18.2.0`;
-* React Native: `0.73.6`;
-* React Native Web: `~0.19.6`;
-* React Navigation/Native: `^6.1.17`; e
-* Typescript: `^5.1.3`.
+**Design UX:** O sistema prioriza a experiência do usuário através de funcionalidades como: foco automático nos formulários de cadastro, gatilho de foco pela tecla Enter, marcação automática de checkboxes ao clicar em elementos da lista, indicação clara da localização do usuário durante a navegação, exibição de mensagens de erro ou confirmação de tarefas, uso de modais para confirmar ações sensíveis, e uma interface moderna, limpa e totalmente responsiva.
+
+**Segurança:** Para garantir a máxima proteção, todas as operações são executadas em objetos separados, e as classes que interagem diretamente com o banco de dados realizam a limpeza dos parâmetros recebidos, removendo qualquer caractere especial potencialmente perigoso.

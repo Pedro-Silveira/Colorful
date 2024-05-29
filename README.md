@@ -1,38 +1,28 @@
-# Teste de conhecimentos PHP + Banco de dados
-##### Objetivo
-Criar um Crud simples, totalmente desenvolvido em PHP, sem a utilização de frameworks, onde será possível Criar/Editar/Excluir/Listar usuários. O sistema também deve possuir a possibilidade de vincular/desvincular várias cores ao usuário.
+# Colorful: CRUD de Usuários e Cores
+![Versão](https://img.shields.io/badge/Vers%C3%A3o-1.0-%2397C900?style=for-the-badge)
+![Linguagem](https://img.shields.io/badge/Linguagem-PHP-%231F6FEB?style=for-the-badge)
+![Banco de Dados](https://img.shields.io/badge/Banco%20de%20Dados-SQLite-%231F6FEB?style=for-the-badge)
 
-##### Estrutura de banco de dados
-A seguinte estrutura será utilizada para persistência dos dados, podendo ser alterada a qualquer momento para melhor funcionamento do sistema:
+![Captura de tela.](https://drive.google.com/uc?export=view&id=157rHM-EQwLcLZu5sGBsSq6sfJDRh3ZH3)
+<img src="https://drive.google.com/uc?export=view&id=1ib-k4t7i3frAHR_OaYfizcnU_Q0XhV4c" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1HwghGqEge6nW9BqJeu7FH3xjPN5SA4GE" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1rZDNfoWzKAB1I8ZKsJGqgePOGSZ2GWPP" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1B2YDRbsm_lWr__VzkjxMUwQBc-P_ZQtp" width="20%"></img><img src="https://drive.google.com/uc?export=view&id=1mOFFBTCYNhzx1PQ0unXhDszJUdO3NFQw" width="20%"></img>
+> Sistema de gerenciamento de eventos desenvolvido para a Pastoral Universitária da Universidade La Salle, com o objetivo de substituir as planilhas de controle de eventos por um método mais eficiente e prático.
 
-```sql
-    tabela: users
-        id      int not null auto_increment primary key
-        name    varchar(100) not null
-        email   varchar(100) not null
-```
-```sql
-    tabela: colors
-        id      int not null auto_increment primary key
-        name    varchar(50) not null
-```
-```sql
-    tabela: user_colors
-        color_id  int
-        user_id   int
-```
+## 📝 Documentação
 
-##### Start
-Este projeto conta com uma base sqlite com alguns registros já inseridos. Para início das atividades, use como base o arquivo `index.php`, este é apenas um arquivo exemplo onde é aberta conexão com o banco de dados e lista os usuários em uma tabela.
+Consulte a documentação oficial do sistema abaixo:
 
-##### Pontos que serão levados em conta
-- Funcionalidade
-- Organização do código e projeto
-- Apresentação da interface (Poderá usar frameworks CSS como Bootstrap, Material, Foundation etc)
+* [Documentação do Software](https://drive.google.com/file/d/1z-JO-Fd32rxnKwQZLBNeQSMlXlDjFLHk/view?usp=sharing)
+* [Mockup](https://drive.google.com/file/d/1XB2Cb4lA1HgFn3ETssh5pRcymbHpRgpC/view?usp=sharing)
 
-##### Dicas
-- Para utilizar o banco de dados contido na pasta `database/db.sqlite` é necessário que a sua instalação do php tenha a extensão do sqlite instalada e ativada
-- O Php possui um servidor embutido, você consegue dar start ao projeto abrindo o terminal de comando na pasta baixada e executando `php -S 0.0.0.0:7070` e em seguida abrir o navegador em `http://localhost:7070`
+## 💻 Dependências
 
-##### Boa Sorte
-Use seu conhecimento, consulte a documentação e o google, caso ainda houver dúvidas, nos pergunte :D. Boa sorte!
+São dependências para o funcionamento do sofware:
+
+* Expo: `~50.0.14`;
+* Firebase: `^10.11.0`;
+* Native Base: `^3.4.28`;
+* React: `18.2.0`;
+* React Native: `0.73.6`;
+* React Native Web: `~0.19.6`;
+* React Navigation/Native: `^6.1.17`; e
+* Typescript: `^5.1.3`.

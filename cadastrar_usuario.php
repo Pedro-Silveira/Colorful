@@ -1,3 +1,13 @@
+<?php
+    # Imports
+    require 'functions/mensagem_erro.php';
+    
+    # Mensagens de erro
+    if (isset($_GET["m"])) {
+        $mensagem = mensagemErro($_GET["m"]);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -5,10 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastrar Usuário - Colorful</title>
         <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/bootstrap-icons.min.css">
-        <link href="/css/styles.css" rel="stylesheet">
         <script src="/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/getDate.js"></script>
         <script src="/js/focar_formulario.js"></script>
     </head>
     <body class="bg-light d-flex flex-column min-vh-100">
@@ -44,31 +51,26 @@
                         <div class="card-body bg-white me-4 rounded-start p-5 h-100">
                             <p class="h1">Cadastrar Usuário</p>
                             <p class="text-body-secondary mb-5">Preencha os campos abaixo para cadastrar um novo usuário.</p>
-                            <form action="post_usuario.php" method="POST">
+                            <form action="functions/post_usuario.php" method="POST">
                                 <div class="mb-2">
                                     <label for="nome" class="form-label">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome..." aria-describedby="nomeAjuda" required>
-                                    <div id="nomeAjuda" class="form-text text-danger <?= $_GET['m'] == 1 ? 'd-flex' : 'd-none' ?> align-items-center">
-                                        <img src="/images/alert.png" alt="Alerta" width="13" height="13" class="me-1">
-                                        O nome inserido é inválido!
-                                    </div>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira o nome..." required>
                                 </div>
                                 <div class="mb-4">
                                     <label for="email" class="form-label">E-mail:</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Insira seu e-mail..." aria-describedby="emailAjuda" required>
-                                    <div id="emailAjuda" class="form-text text-danger <?= $_GET['m'] == 2 ? 'd-flex' : 'd-none' ?> align-items-center">
-                                        <img src="/images/alert.png" alt="Alerta" width="13" height="13" class="me-1">
-                                        O e-mail inserido é inválido!
-                                    </div>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Insira o e-mail..." required>
                                 </div>
                                 <div class="d-flex">
                                     <button id="botaoCadastrar" type="submit" class="btn btn-primary me-2">Cadastrar</button>
                                     <button type="reset" class="btn btn-secondary">Limpar</button>
                                 </div>
                             </form>
-                            <div class="alert alert-danger mt-4 <?= $_GET['m'] == 3 ? 'd-flex' : 'd-none' ?>" role="alert">
-                                Houve um erro. Por favor, tente novamente!
-                            </div>
+                            <?php if ($mensagem): ?>
+                                <div class="alert alert-<?= $mensagem['tipo'] === 'erro' ? 'danger' : 'success' ?> alert-dismissible fade show" style="position: fixed; left: 50%; top: 90%; transform: translate(-50%, -90%); z-index: 1050;" role="alert">
+                                    <?= $mensagem['texto'] ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="col-md-3 d-none d-md-block">
@@ -78,7 +80,7 @@
             </div>
         </main>
         <footer class="mt-auto bg-white border-top d-flex justify-content-between px-3 py-2" style="font-size: 14px;">
-            <span class="text-secondary">VersoTech &copy; <span id="ano">2024</span></span>
+            <span class="text-secondary">VersoTech &copy; <span id="ano"><?= date("Y") ?></span></span>
             <span class="text-secondary d-flex">Desenvolvido por <a href="https://linkedin.com/in/pedroh-silveira" class="link-offset-2 link-underline link-underline-opacity-0 link-secondary d-flex align-items-center ms-1" target="_blank">Pedro Silveira <img src="/images/linkedin.png" class="ms-1" alt="LinkedIn" width="15" height="15"></a></span>
         </footer>
     </body>

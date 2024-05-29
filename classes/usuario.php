@@ -20,9 +20,9 @@
 
         public function __toString(){
             return (
-                "<p>Nome: $this->nome</p>
-                <p>E-mail: $this->email</p>
-                <p>ID: $this->id</p>"
+                "<p>ID: $this->id</p>
+                <p>Nome: $this->nome</p>
+                <p>E-mail: $this->email</p>"  
             );
         }
     }
